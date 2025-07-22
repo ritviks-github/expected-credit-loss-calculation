@@ -12,7 +12,7 @@ router.post("/ask-ai", async (req, res) => {
     const userQuery = req.body.query;
 
     // Step 1: Fetch ECL data from Flask
-    const flaskResponse = await axios.get("https://expected-credit-loss-calculation-fast-api.onrender.com/");
+    const flaskResponse = await axios.get("https://expected-credit-loss-calculation-fast-api.onrender.com/ecl-data");
     const eclData = flaskResponse.data;
 
     // Step 2: Format the context string
