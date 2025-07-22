@@ -12,7 +12,7 @@ export default function UploadReport() {
   }, []);
 
   const fetchReports = async () => {
-    const res = await axios.get("http://localhost:8080/api/reports");
+    const res = await axios.get("https://expected-credit-loss-calculation.onrender.com/api/reports");
     setReports(res.data);
   };
 
@@ -24,7 +24,7 @@ export default function UploadReport() {
   formData.append("uploadedBy", email);
   formData.append("role", role);
 
-  await axios.post("http://localhost:8080/api/upload-report", formData);
+  await axios.post("https://expected-credit-loss-calculation.onrender.com/api/upload-report", formData);
   setFile(null);
   fetchReports();
 };

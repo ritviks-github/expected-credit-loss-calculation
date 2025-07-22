@@ -27,7 +27,7 @@ export default function Login() {
     setError(null); // Clear previous error
 
     try {
-      const response = await axios.post('http://localhost:8080/api/login', {
+      const response = await axios.post('https://expected-credit-loss-calculation.onrender.com/api/login', {
         email,
         password,
         role

@@ -13,13 +13,13 @@ export default function ChatBox() {
   }, []);
 
   const fetchMessages = async () => {
-    const res = await axios.get('http://localhost:8080/api/messages');
+    const res = await axios.get('https://expected-credit-loss-calculation.onrender.com/api/messages');
     setChat(res.data);
   };
 
   const sendMessage = async () => {
     if (message.trim()) {
-      await axios.post('http://localhost:8080/api/messages', {
+      await axios.post('https://expected-credit-loss-calculation.onrender.com/api/messages', {
         sender,
         message
       });

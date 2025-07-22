@@ -16,7 +16,7 @@ const ECLGraph = () => {
   const [selectedFeature, setSelectedFeature] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/ecl-data")
+    fetch("https://expected-credit-loss-calculation-fast-api.onrender.com/ecl-data")
       .then((res) => res.json())
       .then((data) => {
         setEclData(data);

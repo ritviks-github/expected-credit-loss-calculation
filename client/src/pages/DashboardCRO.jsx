@@ -25,7 +25,7 @@ useEffect(() => {
     if (!field1 || !field2) return;
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:8000/ecl-data");
+      const res = await axios.get("https://expected-credit-loss-calculation-fast-api.onrender.com/ecl-data");
       setData1(res.data[field1]);
       setData2(res.data[field2]);
     } catch (err) {
@@ -54,7 +54,7 @@ const [loading, setLoading] = useState(false);
 const handleAiSubmit = async () => {
   setLoading(true);
   try {
-    const res = await fetch("http://localhost:8080/api/ask-ai", {
+    const res = await fetch("https://expected-credit-loss-calculation.onrender.com/api/ask-ai", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
