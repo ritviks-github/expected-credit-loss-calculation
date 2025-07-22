@@ -17,7 +17,7 @@ app.add_middleware(
 
 @app.get("/ecl-data")
 def get_ecl_data():
-    df = pd.read_excel("../backend/Bank_Personal_Loan_Modelling.xlsx", sheet_name="Data")
+    df = pd.read_excel("Bank_Personal_Loan_Modelling.xlsx", sheet_name="Data")
     df.drop(['ID', 'ZIP Code'], axis=1, inplace=True)
 
     df['EAD'] = df['CCAvg'] * 1000
@@ -46,7 +46,9 @@ def get_ecl_data():
 
     return result
 
-# Needed to run with: python main.py
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
+@app.get("/healthz")
+def health_check():
+    return {"status": "ok"}
+
+
