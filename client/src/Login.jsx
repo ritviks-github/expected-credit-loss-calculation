@@ -60,6 +60,12 @@ export default function Login() {
      <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card p-4 shadow-sm" style={{ width: "100%", maxWidth: "400px" }}>
         <h3 className="text-center mb-3">Login</h3>
+        <h4>for cro, use credentials</h4>
+        <p>email : cro@example.com</p>
+        <p>password : admin123</p>
+        <h4>for analyst, use credentials</h4>
+        <p>email : admin@example.com</p>
+        <p>password : admin123</p>
         <form onSubmit={handleLogin}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">Email address</label>
