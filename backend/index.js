@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const chatRoutes = require('./routes/chat');
 require('./db');
+require("dotenv").config();
 
 
 
@@ -20,9 +21,9 @@ app.use('/api',require("./routes/ask_ai"));
 app.use('/api/messages', chatRoutes);
 app.use('/api', require('./routes/reports'));
 
+const port = process.env.PORT || 8080;
 
 
-
-app.listen(8080,()=>{
-    console.log("server running on port 8000");
+app.listen(port,()=>{
+    console.log(`server running on port ${port}`);
 })

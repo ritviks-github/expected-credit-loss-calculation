@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const xlsx = require('xlsx');
+require('dotenv').config();  // 👈 Add this line at the top of your file
 
+
+const mongoURI = process.env.MONGO_URI;
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/assign', {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

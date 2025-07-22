@@ -1,24 +1,11 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
+require('dotenv').config();  // 👈 Add this line at the top of your file
 
-AIz
-aSyC
-wzhFJ1U
-J8LU
-Of
-const GEMINI_API_KEY = "";
-ityUR
-FDg
-XF0
-5
-H
-m
-P
-Y
-8
-y
-A
+
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
+
 
 router.post("/ask-ai", async (req, res) => {
   try {
